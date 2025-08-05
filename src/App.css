@@ -1,0 +1,281 @@
+/* CSS Variables for Theme Support */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --border-color: #e5e7eb;
+  --hover-bg: #f9fafb;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --purple-primary: #8800C8;
+  --purple-light: rgba(136, 0, 200, 0.1);
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --hover-bg: #374151;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --purple-primary: #a855f7;
+  --purple-light: rgba(168, 85, 247, 0.2);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* App container - Responsive design with theme support */
+.app-container {
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive padding for different screen sizes */
+@media (min-width: 640px) {
+  .app-container {
+    padding: 2rem;
+  }
+}
+
+.app-content {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* Navigation header */
+.navigation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+/* Back button */
+.back-button {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+.back-button svg {
+  transition: transform 0.3s ease;
+}
+
+.back-button:hover svg {
+  transform: translateX(-4px);
+}
+
+/* Theme toggle button container */
+.theme-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+/* Main heading - Responsive typography */
+.main-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--purple-primary);
+  transition: color 0.3s ease;
+}
+
+/* Responsive heading sizes */
+@media (min-width: 640px) {
+  .main-heading {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-heading {
+    font-size: 2.25rem;
+  }
+}
+
+/* Accordion container - Responsive design with theme support */
+.accordion-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg-secondary);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Responsive container width */
+@media (min-width: 640px) {
+  .accordion-container {
+    max-width: 42rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accordion-container {
+    max-width: 48rem;
+  }
+}
+
+/* Accordion item - Individual accordion sections */
+.accordion-item {
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Accordion button - Clickable headers with hover effects */
+.accordion-button {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+/* Responsive button padding */
+@media (min-width: 640px) {
+  .accordion-button {
+    font-size: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.accordion-button:hover {
+  background-color: var(--hover-bg);
+}
+
+/* .accordion-button.open {
+  color: var(--purple-primary);
+  background-color: var(--purple-light);
+} */
+
+/* Accordion content - Expandable content areas */
+.accordion-content {
+  padding: 1rem 1.5rem;
+  /* background-color: var(--purple-light); */
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+/* Responsive content padding */
+@media (min-width: 640px) {
+  .accordion-content {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+/* Icon styles - Plus/minus icons */
+.accordion-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.accordion-button.open .accordion-icon {
+  color: var(--purple-primary);
+}
+
+/* Question text - Bold question headers */
+.question-text {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* Responsive question text */
+@media (min-width: 640px) {
+  .question-text {
+    font-size: 1rem;
+  }
+}
+
+/* Answer text - Content styling */
+.answer-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+/* Responsive answer text */
+@media (min-width: 640px) {
+  .answer-text {
+    font-size: 0.875rem;
+  }
+} 
