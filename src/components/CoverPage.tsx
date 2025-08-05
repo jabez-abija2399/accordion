@@ -1,5 +1,4 @@
 import React from 'react'
-import { useTheme } from '../contexts/ThemeContext'
 import './CoverPage.css'
 
 // Cover page component with promotional design and navigation
@@ -8,8 +7,8 @@ interface CoverPageProps {
 }
 
 const CoverPage: React.FC<CoverPageProps> = ({ onNavigate }) => {
-  // Get theme state for responsive design
-  const { theme } = useTheme()
+  // Get theme state for responsive design (currently unused but available for future use)
+  // const { theme } = useTheme()
 
   return (
     <div className="cover-page">
