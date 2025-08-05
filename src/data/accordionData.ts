@@ -1,4 +1,3 @@
-import type { AccordionItemType } from "../types"
 
 export const accordionData = [
   {
